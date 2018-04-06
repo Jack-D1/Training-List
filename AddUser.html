@@ -2,19 +2,19 @@
 
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title></title>
 </head>
 <body>
-    <form method="post" onsubmit="return addUser();">
+    <form method= "post" onSubmit="addUser();">
         <table>
             <tr>
                 <td>Username</td>
-                <td><input type="text" name="uName" id="uname" required></td>
+                <td><input type="text" name="uname" id="uname" required></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td> <input type="password" name="pWord" id="pword" required></td>
+                <td> <input type="password" name="pword" id="pword" required></td>
             </tr>
             <tr>
                 <td><input type="submit" id="name" value="Submit"></td>
@@ -29,33 +29,23 @@
 
 <script type="text/javascript">
 
-/*
-    $("#name").click(function () {
-        event.preventDefault();
-        var username = $("#uname").val();
-        var password = $("#pword").val();
-        $.post("adduser.php", { uname: username, pword: password });
-        $("#uname").attr("value", "");
-        $("#pword").attr("value", "");
-    });
-    */
-    function addUser() {
-        event.preventDefault();
-        var uname = document.getElementById('uname').value;
-        var pword = document.getElementById('pword').value;
 
-       $.ajax({
-            type: 'post',
-            url: 'adduser.php',
-            data: {
-                UserName:uname,
-                PassWord:pword,
-            },
-            success: function () { alert("Insertion successful")},
-        });
-
-        return true;
-    }
+        function addUser(){
+            var uname = document.getElementById("uname").value;
+            var pword = document.getElementById("pword").value; 
+            $.ajax({
+               type: 'post',
+               url: 'adduser.php',
+               data: {
+                   	NewUsername:uname,
+                    NewPassword:pword,
+               }
+            });
+            alert("User added");
+            return true;
+            
+        }
+		
 
 </script>
 

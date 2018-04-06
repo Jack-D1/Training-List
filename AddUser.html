@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form method="post" onsubmit="return addUser();">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="uName" id="uname" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td> <input type="password" name="pWord" id="pword" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" id="name" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+
+
+<script type="text/javascript">
+
+/*
+    $("#name").click(function () {
+        event.preventDefault();
+        var username = $("#uname").val();
+        var password = $("#pword").val();
+        $.post("adduser.php", { uname: username, pword: password });
+        $("#uname").attr("value", "");
+        $("#pword").attr("value", "");
+    });
+    */
+    function addUser() {
+        event.preventDefault();
+        var uname = document.getElementById('uname').value;
+        var pword = document.getElementById('pword').value;
+
+       $.ajax({
+            type: 'post',
+            url: 'adduser.php',
+            data: {
+                UserName:uname,
+                PassWord:pword,
+            },
+            success: function () { alert("Insertion successful")},
+        });
+
+        return true;
+    }
+
+</script>
+

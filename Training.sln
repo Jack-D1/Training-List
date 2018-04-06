@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{1B4A159D-1E41-4D30-B3D5-EC8016F68E46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{DF00353F-0B25-4F74-BD52-2A77AEE1E80E}"
+	ProjectSection(SolutionItems) = preProject
+		check.php = check.php
+		connection.php = connection.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27063E0D-58CA-4D09-A0DE-96C6062EA52C}"
+	ProjectSection(SolutionItems) = preProject
+		AddUser.html = AddUser.html
+		home.php = home.php
+		index.html = index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "accounts", "accounts", "{A14955F5-B254-4161-939B-68A7C9497FFA}"
+	ProjectSection(SolutionItems) = preProject
+		adduser.php = adduser.php
+		login.php = login.php
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF00353F-0B25-4F74-BD52-2A77AEE1E80E} = {1B4A159D-1E41-4D30-B3D5-EC8016F68E46}
+		{A14955F5-B254-4161-939B-68A7C9497FFA} = {1B4A159D-1E41-4D30-B3D5-EC8016F68E46}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20E2E5FA-DB58-4516-94D8-D1204DF76DA5}
+	EndGlobalSection
+EndGlobal

@@ -1,8 +1,6 @@
 <?php
 include("connection.php");
 
-//if(isset($_POST['NewUsername'])){
-   /* $options = [
 if(isset($_POST['NewUsername'])){
     $options = [
         'cost' => 15,

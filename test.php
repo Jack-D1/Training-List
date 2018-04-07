@@ -1,4 +1,5 @@
 <?php
 include("connection.php");
-mysqli_query($connection, "INSERT INTO account VALUES('123', '123')");
+$pass = password_hash("Hello", PASSWORD_DEFAULT);
+mysqli_query($connection, "INSERT INTO account VALUES('123', '$pass')");
 ?>

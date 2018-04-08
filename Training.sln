@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2027
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{1B4A159D-1E41-4D30-B3D5-EC8016F68E46}"
 EndProject
@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "accounts", "accounts", "{A1
 	ProjectSection(SolutionItems) = preProject
 		adduser.php = adduser.php
 		login.php = login.php
+		logout.php = logout.php
 	EndProjectSection
 EndProject
 Global

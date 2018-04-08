@@ -22,7 +22,6 @@ if(mysqli_num_rows($checkInDatabase) > 0){
 	$goodLogin = 0;
 }
 
-
 if($goodLogin == 1){
 	header("Location: home.php");
 }

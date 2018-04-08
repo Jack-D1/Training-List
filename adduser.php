@@ -9,5 +9,4 @@ if(isset($_POST['NewUsername'])){
     $uname = $_POST['NewUsername']; 
     mysqli_query($connection,"INSERT INTO account VALUES('$uname', '$Password')");
 }
-
 ?>

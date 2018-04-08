@@ -1,15 +1,12 @@
 <?php
 include("connection.php");
 
-if(isset($_POST['uname'])){
+if(isset($_POST['NewUsername'])){
     $options = [
         'cost' => 15,
     ];
-    $uname = $_POST['uname'];
-    $password = password_hash($_POST['pword'], PASSWORD_BCRYPT, $options); 
-    $addUsers = mysqli_query($connection, "INSERT INTO account(username, password) VALUES ('$uname', '$password') ");
-}else{
-    header("Location: index.html");
+    $Password = password_hash($_POST['NewPassword'], PASSWORD_BCRYPT. $options); 
+    $uname = $_POST['NewUsername']; 
+    mysqli_query($connection,"INSERT INTO account VALUES('$uname', '$Password')");
 }
-
 ?>

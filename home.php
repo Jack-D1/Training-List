@@ -58,6 +58,8 @@ if ($_SESSION['UserID'] <= 2){
     }
     echo "</table>";
     ?>
+    <h2>Add Employee</h2>
+    <iframe src="adduser.html" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
 </body>
 </html>
 

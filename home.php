@@ -46,11 +46,15 @@ if ($_SESSION['UserID'] <= 2){
 <body>
     <h3>Employees</h3>
     <?php
+    echo "<table>";
+    echo "<tr><td><b>Employee</b></td><td><b>Training</b></td></tr>";
     while($employees = mysqli_fetch_assoc($empFromDep)){
-        echo "<table>";
-
-        echo "</table>";
+        echo"<tr>";
+            echo "<td>" . $employees['Name'] . "</td>";
+            echo '<td><a href = "training.php?clock='.$employees['ClockNo'].'">View training</a></td>';
+        echo"</tr>";
     }
+    echo "</table>";
     ?>
 </body>
 </html>

@@ -20,11 +20,13 @@ if ($_SESSION['UserID'] <= 2){
     <h3>Managers</h3>
     <?php
     echo "<table>";
-    echo "<tr><td><b>Name</b></td><td><b>Department</b></td></tr>";
+    echo "<tr><td><b>Name</b></td><td><b>Department</b></td><td><b>Employees</b></td><td><b>Training</b></td></tr>";
     while($managers = mysqli_fetch_assoc($getManagers)){
         echo "<tr>";
         echo "<td>".$managers['Name'] ."</td>";
         echo "<td>".$managers['Department'] ."</td>";
+        echo '<td><a href = "employees.php?dept='.$managers['Department'].'">View Employees</a></td>';
+        echo '<td><a href = "training.php?clock='.$managers['ClockNo'].'">View training</a></td>';
         echo "</tr>";
     }
     echo "</table>";
@@ -38,7 +40,7 @@ if ($_SESSION['UserID'] <= 2){
     $getDept = mysqli_query($connection, "SELECT Department FROM employee,account WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID'");
     $dept = mysqli_fetch_assoc($getDept);
     $empDep = $dept['Department'];
-    $empFromDep = mysqli_query($connection, "SELECT * from employee WHERE Department = '$empDep'");
+    $empFromDep = mysqli_query($connection, "SELECT * from employee WHERE Department = '$empDep' AND manager = 0");
 ?>
 
 <html>

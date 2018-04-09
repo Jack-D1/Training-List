@@ -21,12 +21,12 @@ if ($_SESSION['UserID'] <= 2){
     <?php
     echo "<table>";
     echo "<tr><td><b>Name</b></td><td><b>Department</b></td></tr>";
-        while($managers = mysqli_fetch_assoc($getManagers)){
-            echo "<tr>";
-            echo "<td>".$managers['Name'] ."</td>";
-            echo "<td>".$managers['Department'] ."</td>";
-            echo "</tr>";
-        }
+    while($managers = mysqli_fetch_assoc($getManagers)){
+        echo "<tr>";
+        echo "<td>".$managers['Name'] ."</td>";
+        echo "<td>".$managers['Department'] ."</td>";
+        echo "</tr>";
+    }
     echo "</table>";
     ?>
 </body>
@@ -46,15 +46,25 @@ if ($_SESSION['UserID'] <= 2){
 <body>
     <h3>Employees</h3>
     <?php
-        while($employees = mysqli_fetch_assoc($empFromDep)){
-            echo "<table>";
+    while($employees = mysqli_fetch_assoc($empFromDep)){
+        echo "<table>";
 
-            echo "</table>";
-        }
+        echo "</table>";
+    }
     ?>
 </body>
 </html>
 
+<?php
+}else{
+?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+</body>
+</html>
 <?php
 }
 ?>

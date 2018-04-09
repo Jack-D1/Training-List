@@ -6,7 +6,7 @@ echo "Welcome back " . $_SESSION['username'];
 echo "<br>";
 echo '<a href = "logout.php">Logout</a>';
 $getManagers = mysqli_query($connection, "SELECT * FROM employee WHERE Manager = 1");
-$checkManager = mysqli_query($connection, "SELECT * FROM employee WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID' AND manager = 1");
+$checkManager = mysqli_query($connection, "SELECT username FROM account, employee WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID' AND manager = 1");
 if ($_SESSION['UserID'] <= 2){
 
 
@@ -35,7 +35,7 @@ if ($_SESSION['UserID'] <= 2){
 <?php
 }else if (mysqli_num_rows($checkManager) > 0){
     $UID = $_SESSION['UserID'];
-    $getDept = mysqli_query($connection, "SELECT department FROM employee WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID'");
+    $getDept = mysqli_query($connection, "SELECT Department FROM employee,account WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID'");
     $dept = mysqli_fetch_assoc($getDept);
     $empDep = $dept['Department'];
     $empFromDep = mysqli_query($connection, "SELECT * from employee WHERE Department = '$empDep'");

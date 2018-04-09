@@ -13,6 +13,10 @@
                 <td><input type="text" name="uname" id="uname" onkeyup= "checkUname();" pattern="[^\s]+" title = "Username cannot contain a space"required></td>
             </tr>
             <tr>
+                <td>Clock Number</td>
+                <td><input type="text" name="clockno" id="clock" value="" required></td>
+            </tr>
+            <tr>
                 <td>Password</td>
                 <td> <input type="password" name="pword" id="pword" required></td>
             </tr>
@@ -34,14 +38,15 @@
             event.preventDefault();
 
             var uname = document.getElementById("uname").value;
-            var pword = document.getElementById("pword").value; 
-
+            var pword = document.getElementById("pword").value;
+            var newclock = document.getElementById("clock").value;
             $.ajax({
                type: 'post',
                url: 'adduser.php',
                data: {
                    	NewUsername:uname,
-                    NewPassword:pword,
+                    NewPassword: pword,
+                    NewClock: newclock,
                }
             });
 
@@ -49,7 +54,7 @@
 
             document.getElementById("uname").value = "";
             document.getElementById("pword").value = "";
-
+            document.getElementById("clock").value = "";
             return true;
         }
 

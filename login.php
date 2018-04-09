@@ -12,6 +12,7 @@ if(mysqli_num_rows($checkInDatabase) > 0){
     $accDetails = mysqli_fetch_assoc($checkInDatabase);
     if (password_verify($pWord, $accDetails['password'])){
         $_SESSION['username'] = $uName;
+        $_SESSION['UserID'] = $accDetails['UserID'];
 		$goodLogin = 1;
     }else{
         echo "Incorrect password, please try again";

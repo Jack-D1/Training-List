@@ -1,6 +1,5 @@
 ﻿<?php
-
-
+include("check.php");
 ?>
 
 <!DOCTYPE html>

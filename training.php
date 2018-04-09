@@ -1,7 +1,7 @@
 <?php
 include("check.php");
 include("connection.php");
-if ($_SESSION['UserID'] > 2){
+if (!isset($_GET['clock'])){
     header("Location: home.php");
 }else {
     $clock = $_GET['clock'];

@@ -88,16 +88,16 @@ include("connection.php");
                url: 'emp.php',
                data: {
                    	UsersName:name,
-                    NewClock: newclock,
-                    Department: dept,
-                    Trainer: trainer,
-                    Manager: manag,
+                    NewClock:newclock,
+                    Department:dept,
+                    Trainer:trainer,
+                    Manager:manag,
                }
             });
 
             alert("Employee " + name + " added");
 
-            document.getElementById("uname").value = "";
+            document.getElementById("name").value = "";
             document.getElementById("clock").value = "";
             document.getElementById("dept").value = "";
             document.getElementById("train").value = "";

@@ -10,7 +10,7 @@ if($_SESSION['UserID'] > 2){
     <iframe src="UserAddingPage.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>';
     echo "<br>";
     echo '<h2>Add Employee</h2>
-    <iframe src="AddEmployee.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>';
+    <iframe src="AddEmployee.php" frameborder="0" width = 300px height = 300px>Your browser does not support iFrames. Please use another browser</iframe>';
 }
 
 ?>

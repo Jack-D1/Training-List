@@ -36,10 +36,10 @@ if ($_SESSION['UserID'] <= 2){
 
 <?php
 }else if (mysqli_num_rows($checkManager) > 0){
-    $UID = $_SESSION['UserID'];
     $getDept = mysqli_query($connection, "SELECT Department FROM employee,account WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID'");
     $dept = mysqli_fetch_assoc($getDept);
     $empDep = $dept['Department'];
+    $_SESSION['dept'] = $empDep;
     $empFromDep = mysqli_query($connection, "SELECT * from employee WHERE Department = '$empDep' AND manager = 0");
 ?>
 
@@ -58,8 +58,8 @@ if ($_SESSION['UserID'] <= 2){
     }
     echo "</table>";
     ?>
-    <h2>Add User</h2>
-    <iframe src="UserAddingPage.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
+    <h2>Add Employee</h2>
+    <iframe src="AddEmployee.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
 </body>
 </html>
 

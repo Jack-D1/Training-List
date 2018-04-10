@@ -9,7 +9,7 @@ if(!isset($_POST['UsersName'])){
     $clock = $_POST['NewClock'];
     $dept = $_POST['Department'];
     $train = $_POST['Trainer'];
-    $manag = $_POST['Manag'];
+    $manag = $_POST['Manager'];
 
     mysqli_query($connection, "INSERT INTO employee(Name, ClockNo, Department, Trainer, Manager) VALUES ('$name', '$clock', '$dept', '$train', '$manag')");
 

@@ -67,7 +67,7 @@ include("check.php");
 
         if (name) {
             $.ajax({
-                type: 'post',
+                //type: 'post',
                 url: 'checkuname.php',
                 data: {
                     user_name: name,

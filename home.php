@@ -12,24 +12,27 @@ if ($_SESSION['UserID'] <= 2){
 
 ?>
 <html>
-<head></head>
+<head><title>Peoples Training</title></head>
 <body>
     <br>
     <a href="admin.php">Admin Centre</a>
     <h3>Managers</h3>
     <?php
     echo "<table>";
-    echo "<tr><td><b>Name</b></td><td><b>Department</b></td><td><b>Employees</b></td><td><b>Training</b></td></tr>";
+    echo "<tr><td><b>Name</b></td><td><b>Department</b></td><td><b>Clock No</b></td><td><b>Employees</b></td><td><b>Training</b></td></tr>";
     while($managers = mysqli_fetch_assoc($getManagers)){
         echo "<tr>";
         echo "<td>".$managers['Name'] ."</td>";
         echo "<td>".$managers['Department'] ."</td>";
+        echo "<td>".$managers['ClockNo']."</td>";
         echo '<td><a href = "employees.php?dept='.$managers['Department'].'">View Employees</a></td>';
         echo '<td><a href = "training.php?clock='.$managers['ClockNo'].'">View training</a></td>';
         echo "</tr>";
     }
     echo "</table>";
     ?>
+    <h3>Add Training</h3>
+    <iframe src="addTraining.php" frameborder="0" height=220>Your browser does not support iFrames. Please use another browser</iframe>
 </body>
 </html>
 
@@ -43,7 +46,7 @@ if ($_SESSION['UserID'] <= 2){
 ?>
 
 <html>
-<head>Employees Training</head>
+<head><title>Employees Training</title></head>
 <body>
     <h3>Employees</h3>
     <?php
@@ -58,8 +61,11 @@ if ($_SESSION['UserID'] <= 2){
     }
     echo "</table>";
     ?>
-    <h2>Add Employee</h2>
+    <h3>Add Employee</h3>
     <iframe src="AddEmployee.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
+
+    <h3>Add Training</h3>
+    <iframe src="addTraining.php" frameborder="0" height=220>Your browser does not support iFrames. Please use another browser</iframe>
 </body>
 </html>
 

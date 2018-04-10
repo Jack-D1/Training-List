@@ -12,8 +12,7 @@ if ($_SESSION['UserID'] <= 2){
 
 ?>
 <html>
-<head>
-</head>
+<head></head>
 <body>
     <br>
     <a href="admin.php">Admin Centre</a>
@@ -44,7 +43,7 @@ if ($_SESSION['UserID'] <= 2){
 ?>
 
 <html>
-<head></head>
+<head>Employees Training</head>
 <body>
     <h3>Employees</h3>
     <?php
@@ -69,7 +68,7 @@ if ($_SESSION['UserID'] <= 2){
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>My Training</title>
 </head>
 <body>
 </body>

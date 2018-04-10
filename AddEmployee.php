@@ -77,7 +77,7 @@ include("connection.php");
 
     function addEmp() {
             event.preventDefault();
-
+ 
             var name = document.getElementById("name").value;
             var newclock = document.getElementById("clock").value;
             var dept = document.getElementById("dept").value;

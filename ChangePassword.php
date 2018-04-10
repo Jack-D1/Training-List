@@ -24,6 +24,10 @@ if($_SESSION['UserID'] > 2){
                     <input type="password" name="pword" id="pword" required />
                 </td>
             </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="Submit" /></td>
+            </tr>
         </table>
     </form>
 </body>

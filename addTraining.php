@@ -46,6 +46,7 @@ include("connection.php");
                 </td>
             </tr>
             <tr>
+                <td></td>
                 <td>
                     <input type="submit" id="name" value="Submit" />
                 </td>

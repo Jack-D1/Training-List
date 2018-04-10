@@ -59,6 +59,7 @@ include("check.php");
             }
             ?>
             <tr>
+                <td></td>
                 <td>
                     <input type="submit" id="name" value="Submit" />
                 </td>

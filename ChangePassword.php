@@ -50,7 +50,7 @@ if($_SESSION['UserID'] > 2){
             }
         });
 
-        alert("User " + uname + "'s password updated");
+        alert("User " + username + "'s password updated");
 
         document.getElementById("uname").value = "";
         document.getElementById("pword").value = "";

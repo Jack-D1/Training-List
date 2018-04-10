@@ -25,6 +25,7 @@ include("check.php");
                 <td> <input type="password" name="pword" id="pword" required></td>
             </tr>
             <tr>
+                <td></td>
                 <td><input type="submit" id="name" value="Submit"></td>
             </tr>
         </table>

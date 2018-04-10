@@ -5,7 +5,7 @@ include("check.php");
 if($_SESSION['UserID'] > 2){
 	header("Location: home.php");
 }else {
-    $getAllEmployees = mysqli_query($connection, "SELECT * FROM employee,account WHERE employee.ClockNo = account.ClockNo");
+    $getAllEmployees = mysqli_query($connection, "SELECT * FROM employee,account WHERE employee.ClockNo = account.ClockNo ORDER BY employee.Department ASC");
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">

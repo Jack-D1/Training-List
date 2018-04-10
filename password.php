@@ -10,6 +10,6 @@ if(!isset($_POST['Username'])){
     ];
     $user = $_POST['Username'];
     $password = password_hash($_POST['Password'], PASSWORD_BCRYPT, $options);
-    mysqli_query($connection, "UPDATE account SET password = '$password' WHERE username = '$User'");
+    mysqli_query($connection, "UPDATE account SET password = '$password' WHERE username = '$user'");
 }
 ?>

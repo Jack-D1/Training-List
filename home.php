@@ -15,6 +15,7 @@ if ($_SESSION['UserID'] <= 2){
 <head><title>Peoples Training</title></head>
 <body>
     <br>
+ 
     <a href="admin.php">Admin Centre</a>
     <h3>Managers</h3>
     <?php

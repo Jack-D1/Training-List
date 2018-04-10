@@ -15,6 +15,9 @@ if($_SESSION['UserID'] > 2){
 
     echo "<h3>All Employees</h3>";
     $getAllEmployees = mysqli_query($connection, "SELECT * FROM employee,account WHERE employee.ClockNo = account.ClockNo");
+
+    echo ' <h3>Change Password</h3>
+    <iframe src="ChangePassword.php" frameborder="0" height=220>Your browser does not support iFrames. Please use another browser</iframe>';
     echo "<table>";
     echo "<tr><td><b>Name</b></td><td><b>Username</b></td><td><b>Clock No</b></td><td><b>Department</b></td><td><b>Training</b></td></tr>";
     while ($AllEmployees = mysqli_fetch_assoc($getAllEmployees)){

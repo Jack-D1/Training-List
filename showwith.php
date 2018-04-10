@@ -17,6 +17,46 @@ $startSearch = mysqli_query($connection, "SELECT Name, ClockNo, Department, Trai
         <tr>
             <td><b>Name</b></td>
         </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Name</b>
+            </td>
+        </tr>
     </table>
 </body>
 </html>

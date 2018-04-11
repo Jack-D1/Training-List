@@ -19,3 +19,12 @@ if (!isset($_GET['clock'])){
     echo "</table>";
 }
 ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title><?php echo $name['Name'];?>'s Training</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+</body>
+</html>

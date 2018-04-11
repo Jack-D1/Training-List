@@ -4,7 +4,7 @@ include("connection.php");
 
 $searchterm = "%".$_GET['search']."%";
 
-$startSearch = mysqli_query($connection, "SELECT Name, ClockNo, Department, Trainer, Manager, Course, Level, PassDate, cost FROM course,employee WHERE employee.ClockNo = course.ClockNo AND course.Course LIKE '$searchterm'");
+$startSearch = mysqli_query($connection, "SELECT Name, employee.ClockNo, Department, Trainer, Manager, Course, Level, PassDate, Renew, cost FROM course,employee WHERE employee.ClockNo = course.ClockNo AND course.Course LIKE '$searchterm'");
 
 ?>
 
@@ -13,50 +13,52 @@ $startSearch = mysqli_query($connection, "SELECT Name, ClockNo, Department, Trai
     <title>Users With Training Course</title>
 </head>
 <body>
+    <h2>All people with <?php echo $_GET['search']?> training</h2>
     <table>
         <tr>
-            <td><b>Name</b></td>
-        </tr>
-        <tr>
             <td>
                 <b>Name</b>
-            </td>
-        </tr>
-        <tr>
             <td>
-                <b>Name</b>
+                <b>Clock No</b>
             </td>
-        </tr>
-        <tr>
+        
             <td>
-                <b>Name</b>
+                <b>Department</b>
             </td>
-        </tr>
-        <tr>
+        
             <td>
-                <b>Name</b>
+                <b>Trainer</b>
             </td>
-        </tr>
-        <tr>
+        
             <td>
-                <b>Name</b>
+                <b>Manager</b>
             </td>
-        </tr>
-        <tr>
+        
             <td>
-                <b>Name</b>
+                <b>Course</b>
             </td>
-        </tr>
-        <tr>
+        
             <td>
-                <b>Name</b>
+                <b>Level</b>
             </td>
-        </tr>
-        <tr>
+       
             <td>
-                <b>Name</b>
+                <b>Pass Date</b>
+            </td>
+       
+            <td>
+                <b>Renew Date</b>
+            </td>
+      
+            <td>
+                <b>Cost</b>
             </td>
         </tr>
+            <?php
+            while($search = mysqli_fetch_assoc($startSearch)){
+                echo "<tr><td>".$search['Name']."</td><td>".$search['ClockNo']."</td><td>".$search['Department']."</td><td>".$search['Trainer']."</td><td>".$search['Manager']."</td><td>".$search['Course']."</td><td>".$search['Level']."</td><td>".$search['PassDate']."</td><td>".$search['Renew']."</td><td>".$search['cost']."</td><td></tr>";
+            }
+            ?>
     </table>
 </body>
 </html>

@@ -43,7 +43,16 @@ if($_SESSION['UserID'] > 2){
             </td>
         </tr>
     </table>
-
+    <h3>Search for employees with a course</h3>
+    <form method="get" action="showwith.php">
+    <table>
+        <tr>
+            <td>Course to search for</td>
+            <td><input type="text" name="search" value="" /></td>
+            <td><input type="submit" name="submit" value="Search" /></td>
+        </tr>
+    </table>
+    </form>
     <h3>All Employees</h3>
     <table>
         <tr>

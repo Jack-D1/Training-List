@@ -14,10 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27063E0D-58CA-4D09-A0DE-96C6062EA52C}"
 	ProjectSection(SolutionItems) = preProject
-		AddEmployee.html = AddEmployee.html
+		AddEmployee.php = AddEmployee.php
+		addTraining.php = addTraining.php
+		admin.php = admin.php
+		ChangePassword.php = ChangePassword.php
+		emp.php = emp.php
 		employees.php = employees.php
 		home.php = home.php
 		index.html = index.html
+		password.php = password.php
+		showwith.php = showwith.php
+		train.php = train.php
 		training.php = training.php
 		UserAddingPage.php = UserAddingPage.php
 	EndProjectSection

@@ -1,9 +1,22 @@
 ﻿body {
-    background-color: #1f2a3a;
+    background-color: #303030;
     color: white;
 }
 
 a {
     text-decoration: none;
-    color: white;
+    color: #F5F5F5;
+
+}
+
+table {
+    text-align: center;
+}
+tr {
+    border: 1px white solid;
+}
+#topbar {
+    background-color: #212121;
+    width: 100%;
+    height: auto;
 }

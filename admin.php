@@ -19,7 +19,7 @@ if($_SESSION['UserID'] > 2){
             <img src="WPE.jpg" alt="WPE Logo" width="129.25" height="74.74" />
         </a>
         <h1 style="display:inline-block; margin-bottom: 0; margin-right: 10px; float: right;">
-            <a href="training.php?clock=<?php echo $Clock['ClockNo'];?>">My Training</a>
+            <a href="training.php?clock=<?php echo $_SESSION['Clock']?>">My Training</a>
         </h1>
         <h1 style="display:inline-block; margin-bottom: 0; margin-right: 15px; float: right;">
             <a href="admin.php">Admin Panel</a>

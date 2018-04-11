@@ -2,7 +2,7 @@
 include("check.php");
 include("connection.php");
 
-$searchterm = "%".$_GET['search']."%";
+$searchterm = "%".htmlspecialchars(mysqli_real_escape_string($connection,$_GET['search']))."%";
 
 $startSearch = mysqli_query($connection, "SELECT Name, employee.ClockNo, Department, Trainer, Manager, Course, Level, PassDate, Renew, cost FROM course,employee WHERE employee.ClockNo = course.ClockNo AND course.Course LIKE '$searchterm'");
 
@@ -14,6 +14,21 @@ $startSearch = mysqli_query($connection, "SELECT Name, employee.ClockNo, Departm
     <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="topbar">
+        <a href="home.php" style="margin-right:15px;">
+            <img src="WPE.jpg" alt="WPE Logo" width="129.25" height="74.74" />
+        </a>
+        <h1 style="display:inline-block; margin-bottom: 0; margin-right: 10px; float: right;">
+            <a href="training.php?clock=<?php echo $_SESSION['Clock'];?>">My Training</a>
+        </h1>
+        <h1 style="display:inline-block; margin-bottom: 0; margin-right: 15px; float: right;">
+            <a href="admin.php">Admin Panel</a>
+        </h1>
+        <h1 style="display:inline-block; margin-bottom: 0; margin-right: 15px; float: right;">
+            <a href="logout.php">Logout</a>
+        </h1>
+    </div>
+    <br />
     <h2>All people with <?php echo $_GET['search']?> training</h2>
     <table>
         <tr>

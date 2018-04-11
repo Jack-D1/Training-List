@@ -4,6 +4,7 @@ include("connection.php");
 $UID = $_SESSION['UserID'];
 $getClock = mysqli_query($connection, "SELECT ClockNo FROM account WHERE UserID = '$UID'");
 $Clock = mysqli_fetch_assoc($getClock);
+$_SESSION['Clock'] = $Clock['ClockNo'];
 $getManagers = mysqli_query($connection, "SELECT * FROM employee WHERE Manager = 1");
 $checkManager = mysqli_query($connection, "SELECT username FROM account, employee WHERE employee.ClockNo = account.ClockNo AND UserID = '$UID' AND manager = 1");
 if ($_SESSION['UserID'] <= 2){
@@ -22,7 +23,7 @@ if ($_SESSION['UserID'] <= 2){
             <img src="WPE.jpg" alt="WPE Logo" width="129.25" height="74.74" />
         </a>
         <h1 style="display:inline-block; margin-bottom: 0; margin-right: 10px; float: right;">
-            <a href="training.php?clock=<?php echo $Clock['ClockNo'];?>">My Training</a>
+            <a href="training.php?clock=<?php echo $_SESSION['Clock'];?>">My Training</a>
         </h1>
         <h1 style="display:inline-block; margin-bottom: 0; margin-right: 15px; float: right;">
             <a href="admin.php">Admin Panel</a>
@@ -44,9 +45,19 @@ if ($_SESSION['UserID'] <= 2){
     echo "</tr>";
     }
     echo "</table>";
-    ?>
-    <h3>Add Training</h3>
-    <iframe src="addTraining.php" frameborder="0" height=220>Your browser does not support iFrames. Please use another browser</iframe>
+                         ?>
+    <br />
+    <table>
+        <tr>
+            <td><h3>Add Training</h3></td>
+        </tr>
+        <tr>
+            <td>
+               <iframe src="addTraining.php" frameborder="0" height=220>Your browser does not support iFrames. Please use another browser</iframe>
+            </td>
+        </tr>
+    </table>
+    
 </body>
 </html>
 
@@ -109,10 +120,13 @@ if ($_SESSION['UserID'] <= 2){
 
 <?php
 }else{
+
+    $getTraining = mysqli_query($connection, "SELECT Name, Course, PassDate, Renew FROM account, employee, course WHERE account.ClockNo = employee.ClockNo AND employee.ClockNo = course.ClockNo AND account.UserID = '$UID'");
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>My Training</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <div id="topbar">
@@ -126,6 +140,22 @@ if ($_SESSION['UserID'] <= 2){
             <a href="logout.php">Logout</a>
         </h1>
     </div>
+    <br />
+
+    <h3>My Training</h3>
+    <table>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Course</b></td>
+            <td><b>Pass Date</b></td>
+            <td><b>Renew Date</b></td>
+        </tr>
+        <?php
+        while($training = mysqli_fetch_assoc($getTraining)){
+            echo "<tr><td>".$training['Name']."</td><td>".$training['Course']."</td><td>".$training['PassDate']."</td><td>".$training['Renew']."</td></tr>";
+        }
+        ?>
+    </table>
 </body>
 </html>
 <?php

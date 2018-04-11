@@ -8,6 +8,7 @@ include("check.php");
 <head>
     <meta charset="utf-8" />
     <title>Add Employee</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <form method="post" onsubmit="addEmp();">

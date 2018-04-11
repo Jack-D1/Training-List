@@ -21,3 +21,11 @@ if ($_SESSION['UserID'] > 2){
 echo '<h3>Add Training</h3>
     <iframe src="addTraining.php" frameborder="0" height=220>Your browser does not support iFrames. Please use another browser</iframe>';
 ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title><?php echo $dept;?> Department Employees</title>
+    <link href="stylehseet.css" rel="stylesheet" />
+</head>
+<body>
+</body>
+</html>

@@ -12,7 +12,11 @@ if ($_SESSION['UserID'] <= 2){
 
 ?>
 <html>
-<head><title>Peoples Training</title></head>
+<head>
+    <title>Peoples Training</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+</head>
+
 <body>
     <br>
  

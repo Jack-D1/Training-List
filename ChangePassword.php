@@ -8,6 +8,7 @@ if($_SESSION['UserID'] > 2){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Change Password</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <form method="post" onsubmit="updatePassword();">

@@ -1,5 +1,9 @@
 ﻿<?php
 include("check.php");
+
+if($_SESSION['UserID'] > 2){
+    header("Location: home.php");    
+}else{
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +12,7 @@ include("check.php");
 <head>
     <meta charset="utf-8">
     <title></title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <form method= "post" onSubmit="addUser();">
@@ -91,4 +96,6 @@ include("check.php");
     }
 
 </script>
-
+<?php
+}
+?>

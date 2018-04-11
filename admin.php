@@ -11,6 +11,7 @@ if($_SESSION['UserID'] > 2){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Admin Panel</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <table>
@@ -43,7 +44,8 @@ if($_SESSION['UserID'] > 2){
             </td>
         </tr>
     </table>
-    <h3>Search for employees with a course</h3>
+    
+    <h3>Search for employees with a training course</h3>
     <form method="get" action="showwith.php">
     <table>
         <tr>
@@ -53,6 +55,22 @@ if($_SESSION['UserID'] > 2){
         </tr>
     </table>
     </form>
+
+    <h3>Search for employees who do not have a training course</h3>
+    <form method="get" action="showwithout.php">
+        <table>
+            <tr>
+                <td>Course to search for</td>
+                <td>
+                    <input type="text" name="search" value="" />
+                </td>
+                <td>
+                    <input type="submit" name="submit" value="Search" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
     <h3>All Employees</h3>
     <table>
         <tr>

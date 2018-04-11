@@ -11,6 +11,7 @@ $startSearch = mysqli_query($connection, "SELECT Name, employee.ClockNo, Departm
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Users With Training Course</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <h2>All people with <?php echo $_GET['search']?> training</h2>
@@ -18,6 +19,8 @@ $startSearch = mysqli_query($connection, "SELECT Name, employee.ClockNo, Departm
         <tr>
             <td>
                 <b>Name</b>
+            </td>
+
             <td>
                 <b>Clock No</b>
             </td>

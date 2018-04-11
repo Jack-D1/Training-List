@@ -5,6 +5,7 @@ include("connection.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Add Training</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <form method="post" onsubmit="addTrain();">

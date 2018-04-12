@@ -32,21 +32,37 @@ if ($_SESSION['UserID'] <= 2){
             <a href="logout.php">Logout</a>
         </h1>
     </div>
-    <h3>Managers</h3>    <?php
-    echo "<table>";
-    echo "<tr><td><b>Name</b></td><td><b>Department</b></td><td><b>Clock No</b></td><td><b>Employees</b></td><td><b>Training</b></td></tr>";
-    while($managers = mysqli_fetch_assoc($getManagers)){
-    echo "<tr>";
-    echo "<td>".$managers['Name'] ."</td>";
-    echo "<td>".$managers['Department'] ."</td>";
-    echo "<td>".$managers['ClockNo']."</td>";
-    echo '<td><a href = "employees.php?dept='.$managers['Department'].'">View Employees</a></td>';
-    echo '<td><a href = "training.php?clock='.$managers['ClockNo'].'">View training</a></td>';
-    echo "</tr>";
-    }
-    echo "</table>";
-                         ?>
+    
+    <table>
+        <tr>
+            <td>
+                <h3>Managers</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php
+                    echo "<table>";
+                    echo "<tr><td><b>Name</b></td><td><b>Department</b></td><td><b>Clock No</b></td><td><b>Employees</b></td><td><b>Training</b></td></tr>";
+                    while($managers = mysqli_fetch_assoc($getManagers)){
+                        echo "<tr>";
+                        echo "<td>".$managers['Name'] ."</td>";
+                        echo "<td>".$managers['Department'] ."</td>";
+                        echo "<td>".$managers['ClockNo']."</td>";
+                        echo '<td><a href = "employees.php?dept='.$managers['Department'].'">View Employees</a></td>';
+                        echo '<td><a href = "training.php?clock='.$managers['ClockNo'].'">View training</a></td>';
+                        echo "</tr>";
+                    }
+                    echo "</table>";
+                ?>
+            </td>
+        </tr>
+    </table>
+    
+      
     <br />
+
+
     <table>
         <tr>
             <td><h3>Add Training</h3></td>
@@ -87,19 +103,31 @@ if ($_SESSION['UserID'] <= 2){
             <a href="logout.php">Logout</a>
         </h1>
     </div>
-    <h3>Employees</h3>    
-    <?php
-    echo "<table>";
-    echo "<tr><td><b>Employee</b></td><td><b>Clock No</b></td><td><b>Training</b></td></tr>";
-    while($employees = mysqli_fetch_assoc($empFromDep)){
-    echo"<tr>";
-    echo "<td>" . $employees['Name'] . "</td>";
-    echo "<td>".$employees['ClockNo']."</td>";
-    echo '<td><a href = "training.php?clock='.$employees['ClockNo'].'">View training</a></td>';
-    echo"</tr>";
-    }
-    echo "</table>";
-     ?>
+    
+    <table>
+        <tr>
+            <td>
+                <h3>Employees</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <?php
+                echo "<table>";
+                echo "<tr><td><b>Employee</b></td><td><b>Clock No</b></td><td><b>Training</b></td></tr>";
+                while($employees = mysqli_fetch_assoc($empFromDep)){
+                    echo"<tr>";
+                    echo "<td>" . $employees['Name'] . "</td>";
+                    echo "<td>".$employees['ClockNo']."</td>";
+                    echo '<td><a href = "training.php?clock='.$employees['ClockNo'].'">View training</a></td>';
+                    echo"</tr>";
+                }
+                echo "</table>";
+                ?>
+            </td>
+        </tr>
+    </table>
+    
     <br />
     <table>
         <tr>
@@ -142,20 +170,40 @@ if ($_SESSION['UserID'] <= 2){
     </div>
     <br />
 
-    <h3>My Training</h3>
+
     <table>
         <tr>
-            <td><b>Name</b></td>
-            <td><b>Course</b></td>
-            <td><b>Pass Date</b></td>
-            <td><b>Renew Date</b></td>
+            <td>
+                <h3>My Training</h3>
+            </td>
         </tr>
-        <?php
-        while($training = mysqli_fetch_assoc($getTraining)){
-            echo "<tr><td>".$training['Name']."</td><td>".$training['Course']."</td><td>".$training['PassDate']."</td><td>".$training['Renew']."</td></tr>";
-        }
-        ?>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <b>Name</b>
+                        </td>
+                        <td>
+                            <b>Course</b>
+                        </td>
+                        <td>
+                            <b>Pass Date</b>
+                        </td>
+                        <td>
+                            <b>Renew Date</b>
+                        </td>
+                    </tr>
+                    <?php
+                    while($training = mysqli_fetch_assoc($getTraining)){
+                        echo "<tr><td>".$training['Name']."</td><td>".$training['Course']."</td><td>".$training['PassDate']."</td><td>".$training['Renew']."</td></tr>";
+                    }
+                    ?>
+                </table>
+            </td>
+        </tr>
     </table>
+
 </body>
 </html>
 <?php

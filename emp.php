@@ -5,7 +5,7 @@ include("connection.php");
 if(!isset($_POST['UsersName'])){
     header("Location: home.php");
 }else{
-    $name = $_POST['UsersName'];
+    $name = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['UsersName']));
     $clock = $_POST['NewClock'];
     $dept = $_POST['Department'];
     $train = $_POST['Trainer'];

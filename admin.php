@@ -85,31 +85,44 @@ if($_SESSION['UserID'] > 2){
         </table>
     </form>
 
-    <h3>All Employees</h3>
     <table>
         <tr>
             <td>
-                <b>Name</b>
-            </td>
-            <td>
-                <b>Username</b>
-            </td>
-            <td>
-                <b>Clock No</b>
-            </td>
-            <td>
-                <b>Department</b>
-            </td>
-            <td>
-                <b>Training</b>
+                <h3>All Employees</h3>
             </td>
         </tr>
-        <?php
-            while ($AllEmployees = mysqli_fetch_assoc($getAllEmployees)){
-                 echo "<tr><td>".$AllEmployees['Name']."</td><td>".$AllEmployees['username']."</td><td>".$AllEmployees['ClockNo']."</td><td>".$AllEmployees['Department'].'</td><td><a href = "training.php?clock='.$AllEmployees['ClockNo'].'">View training</a></td></tr>';
-            }
-        ?>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <b>Name</b>
+                        </td>
+                        <td>
+                            <b>Username</b>
+                        </td>
+                        <td>
+                            <b>Clock No</b>
+                        </td>
+                        <td>
+                            <b>Department</b>
+                        </td>
+                        <td>
+                            <b>Training</b>
+                        </td>
+                    </tr>
+                    <?php
+                         while ($AllEmployees = mysqli_fetch_assoc($getAllEmployees)){
+                                echo "<tr><td>".$AllEmployees['Name']."</td><td>".$AllEmployees['username']."</td><td>".$AllEmployees['ClockNo']."</td><td>".$AllEmployees['Department'].'</td><td><a href = "training.php?clock='.$AllEmployees['ClockNo'].'">View training</a></td></tr>';
+                         }
+                    ?>
+                </table>
+            </td>
+        </tr>
     </table>
+
+    
+  
 </body>
 </html>
 

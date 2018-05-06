@@ -10,8 +10,7 @@ passed to this script.
 The file name will be passed from the upload script to the function on the GET
 method, 
 */
-$file = '"'.$_GET['fileName'] .'"';
-$items = file_get_contents($file);
+$items = file_get_contents($_GET['fileName']);
 
 /*
 Splitting by EOL and then will split by comma within the loop

@@ -1,6 +1,5 @@
 <?php
 include("connection.php");
-
 session_start();
 $goodLogin = 0;
 $uName = $_POST['uName'];
@@ -27,3 +26,11 @@ if($goodLogin == 1){
 	header("Location: home.php");
 }
 ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login Failed</title>
+    <link href="stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+</body>
+</html>

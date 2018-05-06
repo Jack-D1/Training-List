@@ -4,23 +4,35 @@
 <head>
     <meta charset="utf-8" />
     <title>Training List</title>
+    <link href="stylesheet.css" rel="stylesheet" />
 </head>
-<body>
-    <form method="POST" action="login.php">
-    <table>
+<body >
+    <table style="margin-left: auto; margin-right: auto; margin-top: 100px;">
         <tr>
-            <td>Username</td>
-            <td><input type="text" name="uName" value="" required></td>
+            <td><h3>Training Information Login</h3></td>
         </tr>
         <tr>
-            <td>Password</td>
-            <td><input type="password" name="pWord" required></td>
-        </tr>
-        <tr>
-        	<td></td>
-        	<td><input type="submit" name = "submit" value = "Login"></td>
+            <td>
+                <form method="POST" action="login.php">
+                    <table >
+                        <tr>
+                            <td>Username</td>
+                            <td><input type="text" name="uName" value="" required></td>
+                        </tr>
+                        <tr>
+                            <td>Password</td>
+                            <td><input type="password" name="pWord" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" name="submit" value="Login"></td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
         </tr>
     </table>
-    </form>
+    
+  
 </body>
 </html>

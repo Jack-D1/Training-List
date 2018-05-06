@@ -8,14 +8,27 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{DF00353F-0B25-4F74-BD52-2A77AEE1E80E}"
 	ProjectSection(SolutionItems) = preProject
 		check.php = check.php
+		checkuname.php = checkuname.php
 		connection.php = connection.php
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27063E0D-58CA-4D09-A0DE-96C6062EA52C}"
 	ProjectSection(SolutionItems) = preProject
-		AddUser.html = AddUser.html
+		AddEmployee.php = AddEmployee.php
+		addTraining.php = addTraining.php
+		admin.php = admin.php
+		ChangePassword.php = ChangePassword.php
+		emp.php = emp.php
+		employees.php = employees.php
 		home.php = home.php
 		index.html = index.html
+		password.php = password.php
+		showwith.php = showwith.php
+		showwithout.php = showwithout.php
+		stylesheet.css = stylesheet.css
+		train.php = train.php
+		training.php = training.php
+		UserAddingPage.php = UserAddingPage.php
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "accounts", "accounts", "{A14955F5-B254-4161-939B-68A7C9497FFA}"

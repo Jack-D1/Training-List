@@ -3,7 +3,6 @@ include("check.php");
 
 echo '<link rel="stylesheet" href="default.css">';
 
-
 $returnURL = "admin.php";
 $target_dir = "/CSV/";
 $fname = rand().".";
@@ -31,7 +30,6 @@ if ($uploadOk == 0) {
 		echo "<a href = $returnURL> Click here to return</a>";
     }
 }
-?>
 
 
 ?>

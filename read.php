@@ -26,7 +26,7 @@ if(!isset($_GET['fileName'])){header("Location: home.php");}else{
 			eah row, this can be altered for more or less data*/
 			$finSplit = explode(',',$initSplit[$i]);
 			//replace * with table 
-			mysqli_query($connection, "INSERT INTO * VALUES ".$finSplit[0].",".$finSplit[1].",".$finSplit[2]."");
+			mysqli_query($connection, "INSERT INTO employee(Name, ClockNo, Department) VALUES ".$finSplit[0].",".$finSplit[1].",".$finSplit[2]."");
 		}
 
 		header("Location: admin.php");

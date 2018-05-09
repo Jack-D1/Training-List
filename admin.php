@@ -63,6 +63,36 @@ if($_SESSION['UserID'] > 2){
 				<iframe src="UploadPage.php" frameborder="0" width=450>Your browser does not support iFranes. Please use another browser</iframe>
 			</td>
         </tr>
+		<tr>
+			<td>
+				<h3>Update Department</h3>
+			</td>
+			<td>
+				<h3>Make Manager</h3>
+			</td>
+			<td>
+				<h3>Make Trainer</h3>
+			</td>
+			<td>			
+			</td>
+			<td>			
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<iframe src = "UpdateDepartment.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
+			</td>
+			<td>
+				<iframe src = "MakeManager.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
+			</td>
+			<td>
+				<iframe src = "MakeTrainer.php" frameborder="0">Your browser does not support iFrames. Please use another browser</iframe>
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
     </table>
     
     <h3>Search for employees with a training course</h3>
@@ -113,13 +143,23 @@ if($_SESSION['UserID'] > 2){
                         <td>
                             <b>Department</b>
                         </td>
+						<td>
+							<b>Trainer</b>
+						</td>
+						<td>
+							<b>Manager</b>
+						</td>
                         <td>
                             <b>Training</b>
                         </td>
                     </tr>
                     <?php
                          while ($AllEmployees = mysqli_fetch_assoc($getAllEmployees)){
-                                echo "<tr><td>".$AllEmployees['Name']."</td><td>".$AllEmployees['username']."</td><td>".$AllEmployees['ClockNo']."</td><td>".$AllEmployees['Department'].'</td><td><a href = "training.php?clock='.$AllEmployees['ClockNo'].'">View training</a></td></tr>';
+                                echo "<tr><td>".$AllEmployees['Name']."</td><td>".$AllEmployees['username']."</td><td>".$AllEmployees['ClockNo']."</td><td>".$AllEmployees['Department']."</td><td>";
+								if ($AllEmployees['Trainer'] == 0){ echo"No";}else{echo"Yes";}
+								echo "</td><td>";
+								if($AllEmployees['Manager'] == 1){echo"Yes";}else {echo"No";}
+								echo '</td><td><a href = "training.php?clock='.$AllEmployees['ClockNo'].'">View training</a></td></tr>';
                          }
                     ?>
                 </table>

@@ -19,16 +19,31 @@ if(!isset($_GET['fileName'])){header("Location: home.php");}else{
 		Splitting by EOL and then will split by comma within the loop
 		*/
 		$initSplit = explode(PHP_EOL, $items);
-
-
+		
 		for($i = 0; $i < count($initSplit); $i++){
-			/*This example assumes that there are 3 piece of data associated with
+			/*This example assumes that there are 5 pieces of data associated with
 			eah row, this can be altered for more or less data*/
 			$finSplit = explode(',',$initSplit[$i]);
-			//replace * with table 
-			mysqli_query($connection, "INSERT INTO employee(Name, ClockNo, Department) VALUES ".$finSplit[0].",".$finSplit[1].",".$finSplit[2]."");
+			$a = $finSplit[0];
+			$b = $finSplit[1];
+			$c = $finSplit[2];
+			$d = $finSplit[3];
+			$e = $finSplit[4];
+			//Adds people to the employee table
+			mysqli_query($connection, "INSERT INTO employee(Name, ClockNo, Department, Trainer, Manager) VALUES ('$a','$b','$c','$d','$e')");
+			
+			//Give people a user account with a default password
+			$options = [
+				'cost' => 15,
+			];
+			$password = password_hash("password", PASSWORD_BCRYPT, $options);
+			$a = explode(' ', $a);
+			$a1 = str_split($a[0], 1);
+			$uname = $a1[0].$a[1];
+			mysqli_query($connection, "INSERT INTO account(username, password, ClockNo) VALUES('$uname','$password','$b')");
+			
 		}
 
-		header("Location: admin.php");
+		header("Location: UploadPage.php");
 }
 ?>

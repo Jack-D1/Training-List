@@ -42,6 +42,9 @@ if($_SESSION['UserID'] > 2){
             <td>
                 <h3>Change Password</h3>
             </td>
+			<td>
+				<h3>Add Employees from file</h3>
+			</td>
         </tr>
         <tr>
             <td>
@@ -56,6 +59,9 @@ if($_SESSION['UserID'] > 2){
             <td>
                 <iframe src="ChangePassword.php" frameborder="0" height=150>Your browser does not support iFrames. Please use another browser</iframe>
             </td>
+			<td>
+				<iframe src="UploadPage.php" frameborder="0" width=450>Your browser does not support iFranes. Please use another browser</iframe>
+			</td>
         </tr>
     </table>
     
